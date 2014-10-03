@@ -1,0 +1,34 @@
+{
+    "name":        "mpalourdio/twitter-widget-bundle",
+    "description": "Simple bundle to easily display twitter timelines widgets in twig views",
+    "license":     "MIT",
+    "keywords":    [
+        "twig",
+        "symfony",
+        "twitter",
+        "widget",
+        "timeline"
+    ],
+    "homepage":    "https://github.com/mpalourdio/TwitterWidgetBundle",
+    "authors":     [
+        {
+            "name":     "@mpalourdio",
+            "email":    "mpalourdio@gmail.com",
+            "homepage": "https://github.com/mpalourdio"
+        }
+    ],
+    "require":     {
+        "php":                        ">=5.5",
+        "symfony/symfony":            "2.5.*",
+        "mpalourdio/twitter-widgets": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit":           "4.*",
+        "squizlabs/php_codesniffer": "1.5.*"
+    },
+    "autoload":    {
+        "psr-4": {
+            "TwitterWidgetBundle\\": ""
+        }
+    }
+}
