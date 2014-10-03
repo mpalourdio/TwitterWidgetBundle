@@ -30,5 +30,10 @@
         "psr-4": {
             "TwitterWidgetBundle\\": ""
         }
+    },
+    "autoload-dev":      {
+        "psr-4": {
+            "TwitterWidgetBundleTests\\": "Tests/"
+        }
     }
 }
