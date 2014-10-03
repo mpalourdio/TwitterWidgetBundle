@@ -6,14 +6,9 @@ services:
             class: TwitterWidgets\Timeline\TimelineBuilder
             arguments: [@twitterwidget.widgetoptions]
 
-    twitterwidget.timeline:
+    twitterwidget.twig.extensions:
         class:     TwitterWidgetBundle\Extension\TimelineWidget
         arguments: [@twitterwidget.widgetoptions, @twitterwidget.timelinebuilder]
-        tags:
-            -  { name: twig.extension }
-
-    twitterwidget.onetimejs:
-        class:     TwitterWidgetBundle\Extension\OneTimeJs
         tags:
             -  { name: twig.extension }
 

@@ -10,6 +10,7 @@
 
 namespace TwitterWidgetBundle\Extension;
 
+use TwitterWidgets\Assets\OneTimeJsProvider;
 use TwitterWidgets\Options\WidgetOptions;
 use TwitterWidgets\Timeline\TimelineBuilderInterface;
 
@@ -34,7 +35,9 @@ class TimelineWidget extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            'tw' => new \Twig_Function_Method($this, 'renderWidget', ['is_safe' => ['html']])
+            new \Twig_SimpleFunction('tw', [$this, 'renderWidget'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('twJs', [$this, 'getOneTimeWidgetJs'], ['is_safe' => ['html']]),
+
         ];
     }
 
@@ -43,7 +46,7 @@ class TimelineWidget extends \Twig_Extension
      */
     public function getName()
     {
-        return 'timeline';
+        return 'timelinewidgetextensions';
     }
 
     /**
@@ -56,5 +59,13 @@ class TimelineWidget extends \Twig_Extension
         $this->widgetOptions->setFromArray($options);
 
         return $this->timeline->renderWidget($addJs);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOneTimeWidgetJs()
+    {
+        return (new OneTimeJsProvider())->getOneTimeWidgetJs();
     }
 }
