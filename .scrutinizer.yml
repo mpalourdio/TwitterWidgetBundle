@@ -25,5 +25,5 @@ tools:
         excluded_dirs: ["Tests", "vendor"]
     php_analyzer:
         enabled: true
-       excluded_dirs: ["vendor"]
+        excluded_dirs: ["vendor"]
     sensiolabs_security_checker: true
