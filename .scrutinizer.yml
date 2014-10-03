@@ -6,24 +6,29 @@ tools:
         enabled: true
         config:
             standard: PSR2
+        filter:
+            excluded_paths: ["vendor/*","Resources/*"]
     php_cpd:
         enabled: true
-        excluded_dirs: ["Tests", "vendor"]
+        excluded_dirs: ["Tests", "vendor","Resources"]
     php_cs_fixer:
         enabled: true
         config:
             level: all
-        excluded_dirs: ["vendor"]
+        filter:
+            excluded_paths: ["vendor/*","Resources/*"]
     php_loc:
         enabled: true
-        excluded_dirs: ["Tests", "vendor"]
+        excluded_dirs: ["Tests", "vendor", "Resources"]
     php_mess_detector:
         enabled: true
-        excluded_dirs: ["Tests", "vendor"]
+        filter:
+            excluded_paths: ["vendor/*","Resources/*"]
     php_pdepend:
         enabled: true
-        excluded_dirs: ["Tests", "vendor"]
+        excluded_dirs: ["Tests", "vendor", "Resources"]
     php_analyzer:
         enabled: true
-        excluded_dirs: ["vendor"]
+        filter:
+            excluded_paths: ["vendor/*","Resources/*"]
     sensiolabs_security_checker: true
