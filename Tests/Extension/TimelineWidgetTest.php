@@ -88,4 +88,25 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('rendered!', $extension->renderWidget([]));
     }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testWrongTypeThrowsException()
+    {
+        $widgetOption = $this
+            ->getMockBuilder(WidgetOptions::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $timelineBuilder = $this
+            ->getMockBuilder(TimelineBuilder::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $viewHelper = new TimelineWidget($widgetOption, $timelineBuilder);
+        $options    = new \stdClass();
+
+        $viewHelper->renderWidget($options);
+    }
 }

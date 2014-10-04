@@ -10,8 +10,10 @@
 
 namespace TwitterWidgetBundle\Extension;
 
+use InvalidArgumentException;
 use TwitterWidgets\Assets\OneTimeJsProvider;
 use TwitterWidgets\Options\WidgetOptions;
+use TwitterWidgets\Options\WidgetOptionsInterface;
 use TwitterWidgets\Timeline\TimelineBuilderInterface;
 
 class TimelineWidget extends \Twig_Extension
@@ -50,12 +52,17 @@ class TimelineWidget extends \Twig_Extension
     }
 
     /**
-     * @param  array $options
-     * @param  bool  $addJs
+     * @param  array|WidgetOptionsInterface $options
+     * @param  bool                         $addJs
      * @return string
      */
     public function renderWidget($options, $addJs = true)
     {
+        if (!is_array($options) && !($options instanceof WidgetOptionsInterface)) {
+            throw new InvalidArgumentException(
+                '"options" must be an array or an implementation of WidgetOptionsInterface'
+            );
+        }
         $this->widgetOptions->setFromArray($options);
 
         return $this->timeline->renderWidget($addJs);
