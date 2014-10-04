@@ -75,7 +75,6 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
     {
         $widgetOptions = $this->getMock(WidgetOptions::class);
 
-
         $timelinebuilder = $this
             ->getMockBuilder(TimelineBuilder::class)
             ->disableOriginalConstructor()
