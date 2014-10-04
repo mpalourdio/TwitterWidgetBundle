@@ -68,7 +68,7 @@ $options->setDataWidgetId('1245687955000');
 $options->setHref('https://twitter.com/NickName');
 $options->setHrefText('Here type a title');
 
-{{tw($options)}}
+{{tw(options)}}
 ```
 
 The function second parameter is a boolean (true by default), that indicates if you must render the javascript code for your widget. If you have more that one widget on your page,
