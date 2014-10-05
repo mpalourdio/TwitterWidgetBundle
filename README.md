@@ -60,7 +60,8 @@ Their PHP equivalent as array keys to use in the view helper are  :
 'dataRelated'     => 'benward,endform',
 'dataAriaPolite'  => 'polite or assertive',
 ```
-You can pass an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of the array (or an implementation of ```TwitterWidgets\Timeline\TimelineBuilderInterface```).
+
+You can give an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of the array (or any implementation of ```TwitterWidgets\Timeline\WidgetOptionsInterface```)..
 
 ```php
 $options = new TwitterWidgets\Options\WidgetOptions();
