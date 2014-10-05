@@ -52,7 +52,7 @@ Their PHP equivalent as array keys to use in the view helper are  :
 'dataTheme'       => 'ex: dark',
 'dataLinkColor'   => 'ex: #cc0000',
 'width'           => 300 (integer),
-'height'          => 400 (integer,
+'height'          => 400 (integer),
 'dataChrome'      => 'noheader nofooter noborders noscrollbar transparent', => a string with options separated by a single space
 'dataBorderColor' => 'border color used by the widget',
 'language'        => 'The widget language detected from the page, based on the HTML lang attribute of your content. You can also set the HTML lang attribute on the embed code itself.',
@@ -61,7 +61,7 @@ Their PHP equivalent as array keys to use in the view helper are  :
 'dataAriaPolite'  => 'polite or assertive',
 ```
 
-You can give an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of the array (or any implementation of ```TwitterWidgets\Timeline\WidgetOptionsInterface```)..
+You can give an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of the array (or any implementation of ```TwitterWidgets\Timeline\WidgetOptionsInterface```).
 
 ```php
 $options = new TwitterWidgets\Options\WidgetOptions();
@@ -69,7 +69,7 @@ $options->setDataWidgetId('1245687955000');
 $options->setHref('https://twitter.com/NickName');
 $options->setHrefText('Here type a title');
 
-{{tw(options)}}
+{{ tw(options) }}
 ```
 
 The function second parameter is a boolean (true by default), that indicates if you must render the javascript code for your widget. If you have more that one widget on your page,
