@@ -10,7 +10,7 @@
 
 TwitterWidgetBundle
 ===================
-Twig extension to easily display twitter timelines widgets. Based on this library : https://github.com/mpalourdio/TwitterWidgets
+Twig extension to easily display twitter embedded timelines widgets in Symfony project. Based on this library : https://github.com/mpalourdio/TwitterWidgets
 
 Requirements
 ============
@@ -19,30 +19,30 @@ PHP 5.5+ - Only Composer installation supported
 Installation
 ============
 Add to the **require** list of your composer.json
-```"mpalourdio/twitter-widget-bundle": "dev-master"```
+```"mpalourdio/twitter-widget-bundle": ".*"```
 
 Add ```new TwitterWidgetBundle\TwitterWidgetBundle()``` to your **AppKernel.php**
 
 Usage
 =====
-- 1) Create an embed timeline here : https://twitter.com/settings/widgets/new
-- 2) In the javascript generated code, get the URL and the data-widget-id (minimum informations required)
-- 3) Finally, in a view, use with 
+- 1) Create a timeline widget here : https://twitter.com/settings/widgets/new
+- 2) In the javascript generated code, get the URL and the data-widget-id (minimum information required)
+- 3) Finally, in a twig template, use as following: 
 
 ```php
-{{tw(
-        {
-             'dataWidgetId' : '1245687955000', => the id must be a string (quotes), because of long integer converted to float
-             'href'         : 'https://twitter.com/NickName',
-             'hrefText'     : 'Here type a title'
-         },
-        true/false
-    }}
+{{ 
+  tw({
+         'dataWidgetId' : '1245687955000', => the id must be a string (quotes), because of long integer converted to float
+         'href'         : 'https://twitter.com/NickName',
+         'hrefText'     : 'Here type a title'
+     },
+     true/false
+}}
 ```
 
 All the following options are handled : https://dev.twitter.com/web/embedded-timelines#options
 
-Their PHP equivalent as array keys to use in the view helper are  :
+Their PHP equivalent as array keys to use in the twig function are  :
 
 ```php
 'class'           => 'A css class, by default it will be twitter-timeline',
@@ -61,7 +61,7 @@ Their PHP equivalent as array keys to use in the view helper are  :
 'dataAriaPolite'  => 'polite or assertive',
 ```
 
-You can give an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of the array (or any implementation of ```TwitterWidgets\Timeline\WidgetOptionsInterface```).
+You can give an instance of ```TwitterWidgets\Options\WidgetOptions``` instead of an array (or any implementation of ```TwitterWidgets\Timeline\WidgetOptionsInterface```).
 
 ```php
 $options = new TwitterWidgets\Options\WidgetOptions();
@@ -73,7 +73,7 @@ $options->setHrefText('Here type a title');
 ```
 
 The function second parameter is a boolean (true by default), that indicates if you must render the javascript code for your widget. If you have more that one widget on your page,
-use the ```OneTimeJs``` extension to only add once the javascript code, just before your ```</body>```. This will avoid overhead. See https://dev.twitter.com/web/javascript/loading
+use the ```OneTimeJs``` extension to only add once the javascript code, just before your ```</body>```. This will avoid some overhead. See https://dev.twitter.com/web/javascript/loading
 
 ```php
 {% block javascripts %}
