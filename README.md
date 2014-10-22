@@ -19,8 +19,11 @@ PHP 5.5+ - Only Composer installation supported
 
 Installation
 ============
-Add to the **require** list of your composer.json
-```"mpalourdio/twitter-widget-bundle": "0.*"```
+Run the command below to install via Composer
+
+```shell
+composer require mpalourdio/twitter-widget-bundle
+```
 
 Add ```new TwitterWidgetBundle\TwitterWidgetBundle()``` to your **AppKernel.php**
 
