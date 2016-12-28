@@ -18,24 +18,16 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstance()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
-        $timelineBuilder = $this->getMock(
-            TimelineBuilder::class,
-            [],
-            [$widgetOptions]
-        );
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $this->assertInstanceOf(TimelineWidget::class, new TimelineWidget($widgetOptions, $timelineBuilder));
     }
 
     public function testTwoFunctionsAreRegistered()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
-        $timelineBuilder = $this->getMock(
-            TimelineBuilder::class,
-            [],
-            [$widgetOptions]
-        );
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $extension = new TimelineWidget($widgetOptions, $timelineBuilder);
 
@@ -44,12 +36,8 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
 
     public function testName()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
-        $timelineBuilder = $this->getMock(
-            TimelineBuilder::class,
-            [],
-            [$widgetOptions]
-        );
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $extension = new TimelineWidget($widgetOptions, $timelineBuilder);
 
@@ -58,12 +46,8 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
 
     public function testOneTimeJs()
     {
-        $widgetOptions   = $this->getMock(WidgetOptions::class);
-        $timelineBuilder = $this->getMock(
-            TimelineBuilder::class,
-            [],
-            [$widgetOptions]
-        );
+        $widgetOptions   = $this->createMock(WidgetOptions::class);
+        $timelineBuilder = new TimelineBuilder($widgetOptions);
 
         $extension = new TimelineWidget($widgetOptions, $timelineBuilder);
 
@@ -73,7 +57,7 @@ class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWidget()
     {
-        $widgetOptions = $this->getMock(WidgetOptions::class);
+        $widgetOptions = $this->createMock(WidgetOptions::class);
 
         $timelinebuilder = $this
             ->getMockBuilder(TimelineBuilder::class)
