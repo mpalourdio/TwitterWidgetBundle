@@ -2,10 +2,10 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgetBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgetBundle/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgetBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mpalourdio/TwitterWidgetBundle/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/55cdf6c4-bdcb-423a-bd3e-20dda3f8ad13/mini.png)](https://insight.sensiolabs.com/projects/55cdf6c4-bdcb-423a-bd3e-20dda3f8ad13)
-[![PHP 5.6+][ico-engine]][lang]
+[![PHP 7.0+][ico-engine]][lang]
 [![MIT Licensed][ico-license]][license]
 
-[ico-engine]: http://img.shields.io/badge/php-5.6+-8892BF.svg
+[ico-engine]: http://img.shields.io/badge/php-7.0+-8892BF.svg
 [lang]: http://php.net
 [ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg
 [license]: LICENSE
@@ -16,7 +16,7 @@ Twig extension to easily display twitter embedded timelines widgets in Symfony p
 
 Requirements
 ============
-PHP 5.6+ - Only Composer installation supported
+PHP 7.0+ - Only Composer installation supported
 
 Installation
 ============
