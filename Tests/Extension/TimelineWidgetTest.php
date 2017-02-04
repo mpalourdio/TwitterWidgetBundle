@@ -10,11 +10,12 @@
 
 namespace TwitterWidgetBundleTests\Extension;
 
+use PHPUnit\Framework\TestCase;
 use TwitterWidgetBundle\Extension\TimelineWidget;
 use TwitterWidgets\Options\WidgetOptions;
 use TwitterWidgets\Timeline\TimelineBuilder;
 
-class TimelineWidgetTest extends \PHPUnit_Framework_TestCase
+class TimelineWidgetTest extends TestCase
 {
     public function testInstance()
     {
