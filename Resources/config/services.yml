@@ -4,11 +4,11 @@ services:
 
     twitterwidget.timelinebuilder:
             class: TwitterWidgets\Timeline\TimelineBuilder
-            arguments: [@twitterwidget.widgetoptions]
+            arguments: ['@twitterwidget.widgetoptions']
 
     twitterwidget.twig.extensions:
         class:     TwitterWidgetBundle\Extension\TimelineWidget
-        arguments: [@twitterwidget.widgetoptions, @twitterwidget.timelinebuilder]
+        arguments: ['@twitterwidget.widgetoptions', '@twitterwidget.timelinebuilder']
         tags:
             -  { name: twig.extension }
 
